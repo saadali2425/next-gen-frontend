@@ -1,0 +1,28 @@
+.sign-in-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  mat-card {
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .sign-up-link {
+    color: #1976d2;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  mat-card-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  

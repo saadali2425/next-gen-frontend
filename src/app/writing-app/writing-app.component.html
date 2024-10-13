@@ -1,0 +1,40 @@
+<div class="writing-app">
+    <h2>Write Your Document</h2>
+    <input type="text" [(ngModel)]="projectTitle" placeholder="Enter project title" class="title-input"/>
+    <angular-editor 
+        [(ngModel)]="editorContent" 
+        [placeholder]="'Enter text here...'" 
+        (dblclick)="onWordClick($event)" 
+        style="height: 300px; border: 1px solid #ccc;">
+    </angular-editor>
+  
+    <button (click)="saveProject()" class="save-button">Save Project</button>
+  
+    <h3>Projects List</h3>
+    <ul class="project-list">
+        <li *ngFor="let project of projects" class="project-item">
+            <h4>{{ project.title }}</h4>
+            <p>{{ project.content }}</p>
+        </li>
+    </ul>
+  
+    <div *ngIf="extractedInfo" class="word-info">
+        <h3>Word Information:</h3>
+        <p><strong>Word:</strong> {{ extractedInfo.word }}</p>
+        <p><strong>Phonetic:</strong> {{ extractedInfo.phonetic }}</p>
+  
+        <h4>Meanings:</h4>
+        <div *ngFor="let meaning of extractedInfo.meanings">
+            <h5>{{ meaning.partOfSpeech }}</h5>
+            <ul>
+                <li *ngFor="let definition of meaning.definitions">
+                    <p><strong>Definition:</strong> {{ definition.definition }}</p>
+                    <p><strong>Example:</strong> {{ definition.examples }}</p>
+                    <p><strong>Synonyms:</strong> {{ definition.synonyms }}</p>
+                    <p><strong>Antonyms:</strong> {{ definition.antonyms }}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </div>
+  

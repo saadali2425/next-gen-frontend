@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <span>Next-Gen AI Writing APP</span>
+  <button mat-button (click)="logout()" style="margin-left: auto;">Logout</button>
+</mat-toolbar>
+
+<div *ngIf="showWelcomeMessage" style="text-align:center; margin-top: 20px;">
+  <h1>Welcome to the Next-Gen AI Writing APP!</h1>
+  <p>Please sign in or sign up to continue.</p>
+</div>
+
+<router-outlet></router-outlet>
