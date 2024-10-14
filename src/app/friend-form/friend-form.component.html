@@ -1,0 +1,69 @@
+<div class="container">
+    <h2>Send Your Book Draft</h2>
+  
+    <form [formGroup]="friendForm">
+      <div class="form-group">
+        <label for="name">Friend's Name</label>
+        <input
+          type="text"
+          id="name"
+          formControlName="name"
+          class="form-control"
+          [ngClass]="{'is-invalid': friendForm.get('name')?.invalid && friendForm.get('name')?.touched }"
+        />
+        <div *ngIf="friendForm.get('name')?.invalid && friendForm.get('name')?.touched" class="invalid-feedback">
+          Name is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          class="form-control"
+          [ngClass]="{'is-invalid': friendForm.get('email')?.invalid && friendForm.get('email')?.touched }"
+        />
+        <div *ngIf="friendForm.get('email')?.invalid && friendForm.get('email')?.touched" class="invalid-feedback">
+          A valid email is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input
+          type="text"
+          id="address"
+          formControlName="address"
+          class="form-control"
+          [ngClass]="{'is-invalid': friendForm.get('address')?.invalid && friendForm.get('address')?.touched }"
+        />
+        <div *ngIf="friendForm.get('address')?.invalid && friendForm.get('address')?.touched" class="invalid-feedback">
+          Address is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="city">City</label>
+        <input
+          type="text"
+          id="city"
+          formControlName="city"
+          class="form-control"
+          [ngClass]="{'is-invalid': friendForm.get('city')?.invalid && friendForm.get('city')?.touched }"
+        />
+        <div *ngIf="friendForm.get('city')?.invalid && friendForm.get('city')?.touched" class="invalid-feedback">
+          City is required.
+        </div>
+      </div>
+  
+      
+      <div class="d-flex justify-content-between mt-4 mb-4">
+        <button type="submit" class="btn btn-primary" [disabled]="friendForm.invalid" (click)="onSubmit()">Submit</button>
+        <br>
+        <button type="button" class="btn btn-secondary" [routerLink]="['/writing-app']">Go Back</button>
+      </div>
+    </form>
+  </div>
+  

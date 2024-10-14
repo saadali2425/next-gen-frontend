@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../service/project.service';
 import { WordLookupService } from '../service/word-lookup.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-writing-app',
@@ -15,7 +16,9 @@ export class WritingAppComponent implements OnInit {
     projectTitle = '';
     extractedInfo: any;
 
-    constructor(private projectService: ProjectService, private wordLookupService: WordLookupService) {}
+    constructor(private projectService: ProjectService, 
+      private wordLookupService: WordLookupService,
+      private router: Router) {}
 
     ngOnInit(): void {
         this.loadProjects();
@@ -87,5 +90,9 @@ export class WritingAppComponent implements OnInit {
             }))
           };
         }
+      }
+
+      goToFriendForm() {
+        this.router.navigate(['/send-draft']); 
       }
 }

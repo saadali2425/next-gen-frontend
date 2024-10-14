@@ -12,6 +12,7 @@ export class AppComponent {
   title = 'Writers iBook';
 
   showWelcomeMessage: boolean = false;
+  showLogoutButton: boolean = false;
 
   constructor(private router: Router,private authService: AuthService) {
     this.router.events.pipe(
@@ -20,6 +21,11 @@ export class AppComponent {
    NavigationEnd) => {
       this.showWelcomeMessage   
    = event.url === '/sign-in' || event.url === '/sign-up';
+    });
+    this.router.events.subscribe((event: any) => {
+      if (event.url) {
+        this.showLogoutButton = event.url === '/writing-app';
+      }
     });
   }
 

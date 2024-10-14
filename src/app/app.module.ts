@@ -18,13 +18,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { FriendFormComponent } from './friend-form/friend-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WritingAppComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    FriendFormComponent,
   ],
   imports: [
     BrowserModule,
